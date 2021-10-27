@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "name": "Minh Nguyen",
+      "email": "Minh Nguyen",
+      "phone": "ssas",
+      "address": "VietName",
+      "service": "áấ"
+    },
+    {
+      "id": 3,
+      "name": "Minh Nguyen",
+      "email": "Minh Nguyen",
+      "phone": "ssas",
+      "address": "VietName",
+      "service": ""
+    },
+    {
+      "id": 4,
+      "name": "Minh Nguyen",
+      "email": "Minh Nguyen",
+      "phone": "",
+      "address": "VietName",
+      "service": "sssssss"
+    },
+    {
+      "id": 5,
+      "name": "Minh Nguyen",
+      "email": "Minh Nguyen",
+      "phone": "24242424",
+      "address": "VietName",
+      "service": "fgdsgs"
+    },
+    {
+      "id": 6,
+      "name": null,
+      "email": null,
+      "phone": null,
+      "address": null,
+      "service": null
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,86 @@
+<div class="containers">
+    <div>
+      <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Restaurant</span>
+        <span class="example-spacer"></span>
+        <div class="example-button-row">
+          <button type="button" mat-raised-button color="accent" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add restaurant</button>
+        </div>
+      </mat-toolbar>
+    </div>
+    <table class="table borded-table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">phoneNumber</th>
+                <th scope="col">Address</th>
+                <th scope="col">Service</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of allRestaurantData" >
+                <td> {{data.id}} </td>
+                <td> {{data.name}} </td>
+                <td> {{data.email}} </td>
+                <td> {{data.phone}} </td>
+                <td> {{data.address}} </td>
+                <td> {{data.service}} </td>
+                <td>
+                    <div style="display: flex; align-items: center;">
+                    <button class="btn btn-success btn_active"> <mat-icon aria-hidden="false" aria-label="Example Edit icon">edit</mat-icon> Edit</button> &nbsp;&nbsp;
+                    <button class="btn btn-danger btn_active"> <mat-icon aria-hidden="false" aria-label="Example Delete icon">delete</mat-icon> Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup] = "formValue" autocomplete="off">
+                    <div class="mb-3">
+                        <label for="exampleInputName" class="form-label">Name</label>
+                        <input autocomplete="off" type="text" class="form-control" formControlName = "name" id="exampleInputName" aria-describedby="nameHelp">
+                        <div id="nameHelp" class="form-text"></div>
+                      </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input  autocomplete="off" type="email" class="form-control" formControlName = "email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPhone" class="form-label">Phone</label>
+                      <input  autocomplete="off" type="text" class="form-control" formControlName = "phone" id="exampleInputPhone">
+                    </div>
+                    <div class="mb-3">
+                    <label for="exampleInputAddress" class="form-label">address</label>
+                      <input  autocomplete="off" type="text" class="form-control" formControlName = "address" id="exampleInputAddress" aria-describedby="addressHelp">
+                      <div id="addressHelp" class="form-text"></div>
+                    </div>  
+                    <div class="mb-3">
+                        <label for="exampleInputService" class="form-label">service</label>
+                          <input  autocomplete="off" type="text" class="form-control" formControlName = "service" id="exampleInputService" aria-describedby="serviceHelp">
+                          <div id="serviceHelp" class="form-text"></div>
+                        </div>  
+                    <button type="submit" class="btn btn-primary" (click) = "addRestaurant()" >Submit</button>
+                  </form>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
