@@ -10,15 +10,26 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestaurantDashComponent
+    RestaurantDashComponent,
+    LoginComponent,
+    SignupComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +43,14 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger', // set defaults here
+    }),
+    MatInputModule,
+    MatChipsModule,
+    MatCheckboxModule,
+    NgxPaginationModule
     
   ],
   providers: [],

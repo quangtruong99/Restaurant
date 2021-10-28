@@ -1,0 +1,35 @@
+<section class="wrapper">
+    <div class="content">
+      <header>
+        <h1>Login</h1>
+      </header>
+      <section>
+        <div class="social-login">
+          <button><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google" width="20"><span>Google</span></button>
+          <button><img src="https://cdn.freebiesupply.com/logos/large/2x/facebook-2-logo-svg-vector.svg" alt="facebook" width="10"><span>Facebook</span></button>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="logIn()"  class="login-form">
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input formControlName = "email" type="email" matInput placeholder="Email" required >
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-hint *ngIf="loginForm.controls.email.errors?.required" >email is required</mat-hint>
+              </mat-form-field>  
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>password</mat-label>
+                <input formControlName = "password" type="password" matInput placeholder="password">
+                <mat-icon matSuffix>lock</mat-icon>
+                <mat-hint *ngIf="loginForm.controls.password.errors?.required" >password is required</mat-hint>
+              </mat-form-field>
+              <mat-checkbox class="example-margin">Remember me!</mat-checkbox>
+          <div class="input-group"><button type="submit">Login</button></div>
+        </form>
+      </section>
+      <footer>
+        <a href="#" title="Forgot Password">Forgot Password</a>&nbsp;&nbsp;
+        <a [routerLink]="['/signup']" title="Forgot Password">signup</a>
+      </footer>
+    </div>
+  </section>
+  
+  

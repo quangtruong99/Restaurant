@@ -7,14 +7,15 @@
         <span>Restaurant</span>
         <span class="example-spacer"></span>
         <div class="example-button-row">
-          <button type="button" mat-raised-button color="accent" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add restaurant</button>
+          <button (click)="clickAddRes()" type="button" mat-raised-button color="accent" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add restaurant</button>&nbsp;&nbsp;
+          <button routerLink="/login" type="button" mat-raised-button color="accent" >logout</button>
         </div>
       </mat-toolbar>
     </div>
     <table class="table borded-table">
         <thead>
             <tr>
-                <th scope="col">id</th>
+                <th scope="col">stt</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">phoneNumber</th>
@@ -24,8 +25,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let data of allRestaurantData" >
-                <td> {{data.id}} </td>
+            <tr *ngFor="let data of allRestaurantData | paginate: {itemsPerPage: 5, currentPage: page}, let i = index " >
+                <td> {{i}} </td>
                 <td> {{data.name}} </td>
                 <td> {{data.email}} </td>
                 <td> {{data.phone}} </td>
@@ -33,13 +34,24 @@
                 <td> {{data.service}} </td>
                 <td>
                     <div style="display: flex; align-items: center;">
-                    <button class="btn btn-success btn_active"> <mat-icon aria-hidden="false" aria-label="Example Edit icon">edit</mat-icon> Edit</button> &nbsp;&nbsp;
-                    <button class="btn btn-danger btn_active"> <mat-icon aria-hidden="false" aria-label="Example Delete icon">delete</mat-icon> Delete</button>
+                    <button class="btn btn-success btn_active" (click)="updateRes(data)" data-bs-toggle="modal" data-bs-target="#exampleModal" > <mat-icon aria-hidden="false" aria-label="Example Edit icon">edit</mat-icon> Edit</button> &nbsp;&nbsp;
+                    <button class="btn btn-danger btn_active" 
+                    mwlConfirmationPopover
+                    [popoverTitle]="popoverTitle"
+                    [popoverMessage]="popoverMessage"
+                    placement="left"
+                    (confirm)="deleteRes(data)"
+                    (cancel)="cancelClicked = true"   >
+                       <mat-icon aria-hidden="false" aria-label="Example Delete icon">delete</mat-icon>
+                        Delete
+                    </button>
                     </div>
                 </td>
             </tr>
+
         </tbody>
     </table>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
    
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -74,13 +86,19 @@
                           <input  autocomplete="off" type="text" class="form-control" formControlName = "service" id="exampleInputService" aria-describedby="serviceHelp">
                           <div id="serviceHelp" class="form-text"></div>
                         </div>  
-                    <button type="submit" class="btn btn-primary" (click) = "addRestaurant()" >Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="clear" data-bs-dismiss="modal">Close</button>
+                    <button *ngIf="showAdd" type="button" class="btn btn-primary"  (click) = "addRestaurant()" >add record</button>
+                    <button *ngIf="showBtn" type="button" class="btn btn-primary"  (click) = "onUpdateRes()" >update record</button>
+                  </div>
             </div>
           
           </div>
         </div>
       </div>
+      
     
   </div>
 

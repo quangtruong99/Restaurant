@@ -1,58 +1,106 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": 2,
+      "id": 11,
       "name": "Minh Nguyen",
-      "email": "Minh Nguyen",
-      "phone": "ssas",
+      "email": "minhnguyen120898@gmail.com",
+      "phone": "ssadádsads",
       "address": "VietName",
-      "service": "áấ"
+      "service": "sdasdadad"
     },
     {
-      "id": 3,
+      "id": 13,
       "name": "Minh Nguyen",
-      "email": "Minh Nguyen",
-      "phone": "ssas",
+      "email": "minhnguyen120898@gmail.com",
+      "phone": "021515",
       "address": "VietName",
-      "service": ""
+      "service": "sdasds"
     },
     {
-      "id": 4,
+      "id": 14,
       "name": "Minh Nguyen",
-      "email": "Minh Nguyen",
-      "phone": "",
+      "email": "minhnguyen120898@gmail.com",
+      "phone": "7424242",
       "address": "VietName",
-      "service": "sssssss"
+      "service": "ghjfgh"
     },
     {
-      "id": 5,
+      "id": 15,
       "name": "Minh Nguyen",
-      "email": "Minh Nguyen",
-      "phone": "24242424",
+      "email": "minhnguyen120898@gmail.com",
+      "phone": "20212121",
       "address": "VietName",
-      "service": "fgdsgs"
+      "service": "555sacdsa"
     },
     {
-      "id": 6,
-      "name": null,
-      "email": null,
-      "phone": null,
-      "address": null,
-      "service": null
+      "id": 16,
+      "name": "Minh Nguyen",
+      "email": "minhnguyen120898@gmail.com",
+      "phone": "bscsac",
+      "address": "VietName",
+      "service": "125"
+    },
+    {
+      "id": 17,
+      "name": "sấcca",
+      "email": "âcsc",
+      "phone": "ascasc ",
+      "address": "ácvfdsv",
+      "service": "sdav"
     }
   ],
-  "comments": [
+  "signup": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "trường",
+      "email": "minhnguyen120898@gmail.com",
+      "phone": "0388094615",
+      "password": "sokenhat123",
+      "id": 1
+    },
+    {
+      "name": "truongkio",
+      "email": "minhnguyen120898@gmail.com",
+      "phone": "01254545",
+      "password": "ewewewe",
+      "id": 2
+    },
+    {
+      "name": "tr",
+      "email": "truong@gmail.com",
+      "phone": "0388094615",
+      "password": "sokenhat123",
+      "id": 3
+    },
+    {
+      "name": "truongkio",
+      "email": "truong123@gmail.com",
+      "phone": "0388094615",
+      "password": "sokenhat123",
+      "id": 4
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "03880946",
+      "password": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "email": "minhnguyen120898gmail.com",
+      "phone": "032695565",
+      "password": "",
+      "id": 6
+    },
+    {
+      "name": "truong",
+      "email": "minhnguyen120898@gmail.com",
+      "phone": "0388094615",
+      "password": "sokenhat123",
+      "id": 7
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

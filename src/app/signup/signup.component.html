@@ -1,0 +1,54 @@
+<section class="wrapper">
+    <div class="content">
+      <header>
+        <h1>Signup</h1>
+      </header>
+      <section>
+        <div class="social-login">
+          <button><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google" width="20"><span>Google</span></button>
+          <button><img src="https://cdn.freebiesupply.com/logos/large/2x/facebook-2-logo-svg-vector.svg" alt="facebook" width="10"><span>Facebook</span></button>
+        </div>
+        <form [formGroup]="signUpForm" (ngSubmit)="signUp()" #myForm="ngForm" class="login-form">
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-label>User name</mat-label>
+                <input formControlName="name" id="name" matInput placeholder="Username" required >
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-hint *ngIf="signUpForm.controls.name.errors?.required">Name is required.</mat-hint>
+                <mat-hint *ngIf="signUpForm.controls.name.errors?.minlength">Name must be at least 6 characters.</mat-hint>
+                <mat-hint *ngIf="signUpForm.controls.name.errors?.maxlength">Name must have at most 40 characters.</mat-hint>
+              </mat-form-field>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" type="email" matInput placeholder="Email" required >
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-hint *ngIf="signUpForm.controls.email.errors?.required">email is required.</mat-hint>
+                <mat-hint *ngIf="signUpForm.controls.email.errors?.pattern">email is invalid.</mat-hint>
+                
+              </mat-form-field>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>PhoneNumber</mat-label>
+                <input  formControlName="phone" matInput placeholder="03xxx" required>
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-hint *ngIf="signUpForm.controls.phone.errors?.required">phone is required.</mat-hint>
+             
+              </mat-form-field>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>password</mat-label>
+                <input formControlName="password" type="password" matInput placeholder="password" required >
+                <mat-icon matSuffix>lock</mat-icon>
+                <mat-hint *ngIf="signUpForm.controls.password.errors?.required">password is required.</mat-hint>
+                <mat-hint *ngIf="signUpForm.controls.password.errors?.minlength">password must be at least 6 characters.</mat-hint>
+              </mat-form-field>
+            
+            
+          <div class="input-group"><button type="submit" [disabled]="!signUpForm.valid" >Signup</button></div>
+        </form>
+      </section>
+      <footer>
+        <a [routerLink]="['/login']" title="Forgot Password">already member? click Login</a>
+      </footer>
+    </div>
+  </section>
+  
+  
+
